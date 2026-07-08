@@ -1,7 +1,7 @@
 const config = {
-  title: "Sylvester Elorm Kpei | Software Engineer",
+  title: "Sylvester | Software Engineer",
   description: {
-    long: "Portfolio of Sylvester Elorm Kpei, Cornell CS student and Software Engineering Intern at Salesforce. Experience in AI agents, real-time systems, and full-stack development. Built context-bridging infrastructure for Agentforce on Data Cloud Real-Time team.",
+    long: "Portfolio of Sylvester, Cornell CS student and Software Engineering Intern at Salesforce. Experience in AI agents, real-time systems, and full-stack development. Built context-bridging infrastructure for Agentforce on Data Cloud Real-Time team.",
     short:
       "Cornell CS student | Salesforce SWE Intern | Building AI agents and real-time data systems",
   },
@@ -22,7 +22,7 @@ const config = {
     "machine learning",
     "full-stack developer",
   ],
-  author: "Sylvester Elorm Kpei",
+  author: "Sylvester",
   email: "sek266@cornell.edu",
   site: "https://kpeis695.github.io",
 
