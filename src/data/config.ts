@@ -1,44 +1,44 @@
 const config = {
-  title: "Skpei | Software Engineer @ Salesforce",
+  title: "Sylvester Elorm Kpei | Software Engineer",
   description: {
-    long: "Explore the portfolio of Skpei, a software engineer at Salesforce specializing in data cloud, real-time systems, and AI-powered development workflows. Discover my work on CDP Realtime services and multi-agent orchestration with Claude Code.",
+    long: "Portfolio of Sylvester Elorm Kpei, Cornell CS student and Software Engineering Intern at Salesforce. Experience in AI agents, real-time systems, and full-stack development. Built context-bridging infrastructure for Agentforce on Data Cloud Real-Time team.",
     short:
-      "Portfolio of Skpei, Software Engineer at Salesforce building scalable data solutions with AI-powered workflows.",
+      "Cornell CS student | Salesforce SWE Intern | Building AI agents and real-time data systems",
   },
   keywords: [
-    "Skpei",
+    "Sylvester Kpei",
     "portfolio",
     "software engineer",
+    "Cornell",
     "Salesforce",
-    "data cloud",
+    "Data Cloud",
+    "Agentforce",
+    "AI agents",
     "real-time systems",
-    "CDP",
+    "Python",
     "Java",
-    "TypeScript",
-    "AI workflows",
-    "Claude Code",
-    "Claude Unleashed",
-    "Next.js",
     "React",
-    "multi-agent orchestration",
+    "Swift",
+    "machine learning",
+    "full-stack developer",
   ],
-  author: "Skpei",
-  email: "skpei@salesforce.com",
-  site: "https://skpei.vercel.app",
+  author: "Sylvester Elorm Kpei",
+  email: "sek266@cornell.edu",
+  site: "https://kpeis695.github.io",
 
   // for github stars button
-  githubUsername: "skpei",
+  githubUsername: "kpeis695",
   githubRepo: "personal-website",
 
   get ogImg() {
     return this.site + "/assets/seo/og-image.png";
   },
   social: {
-    twitter: "https://x.com/skpei",
-    linkedin: "https://www.linkedin.com/in/skpei",
+    twitter: "",
+    linkedin: "https://linkedin.com/in/ks200",
     instagram: "",
     facebook: "",
-    github: "https://github.com/skpei",
+    github: "https://github.com/kpeis695",
   },
 };
 export { config };

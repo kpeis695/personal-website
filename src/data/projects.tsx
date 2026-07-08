@@ -6,13 +6,9 @@ import { ArrowUpRight, ExternalLink, Link2, MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
-// Spline has no thesvg entry — keep the Three.js mark as its stand-in.
 import { SiThreedotjs } from "react-icons/si";
 const BASE_PATH = "/assets/projects-screenshots";
 
-// Renders a brand SVG from /public as a monochrome glyph that inherits the
-// surrounding text color (the skill dock styles every icon via currentColor),
-// so full-color marks like Mistral flatten to match the rest of the set.
 const MaskIcon = ({ src, title }: { src: string; title?: string }) => (
   <span
     role="img"
@@ -72,18 +68,15 @@ export type Skill = {
   fg: string;
   icon: ReactNode;
 };
-// Brand chips sourced from thesvg CLI mono SVGs in /public/assets/logos,
-// rendered via MaskIcon so each one inherits the dock's currentColor.
+
 const brand = (title: string, file: string): Skill => ({
   title,
   bg: "black",
   fg: "white",
   icon: <MaskIcon src={`/assets/logos/${file}`} title={title} />,
 });
+
 const PROJECT_SKILLS = {
-  next: brand("Next.js", "nextdotjs-mono.svg"),
-  chakra: brand("Chakra UI", "chakra-ui-mono.svg"),
-  node: brand("Node.js", "nodedotjs-mono.svg"),
   python: brand("Python", "python-mono.svg"),
   java: {
     title: "Java",
@@ -91,40 +84,91 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <span className="text-xs font-bold">Java</span>,
   },
-  prisma: brand("Prisma", "prisma-mono.svg"),
-  postgres: brand("PostgreSQL", "postgresql-mono.svg"),
-  mongo: brand("MongoDB", "mongodb-mono.svg"),
-  express: brand("Express", "express-mono.svg"),
-  reactQuery: brand("React Query", "react-query-mono.svg"),
-  shadcn: brand("shadcn/ui", "shadcn-ui-mono.svg"),
-  // Not in the thesvg registry — keep the existing custom logo.
-  aceternity: {
-    title: "Aceternity",
+  swift: {
+    title: "Swift",
     bg: "black",
     fg: "white",
-    icon: <AceTernityLogo />,
+    icon: <span className="text-xs font-bold">Swift</span>,
   },
-  tailwind: brand("Tailwind", "tailwind-css-mono.svg"),
-  docker: brand("Docker", "docker-mono.svg"),
-  // Not in the thesvg registry — keep the text mark.
-  yjs: {
-    title: "Y.js",
+  swiftui: {
+    title: "SwiftUI",
     bg: "black",
     fg: "white",
-    icon: (
-      <span>
-        <strong>Y</strong>js
-      </span>
-    ),
+    icon: <span className="text-xs font-bold">SwiftUI</span>,
   },
-  firebase: brand("Firebase", "firebase-mono.svg"),
-  sockerio: brand("Socket.io", "socketdotio-mono.svg"),
-  js: brand("JavaScript", "javascript-mono.svg"),
-  ts: brand("TypeScript", "typescript-mono.svg"),
-  vue: brand("Vue.js", "vuedotjs-mono.svg"),
   react: brand("React.js", "react-mono.svg"),
-  sanity: brand("Sanity", "sanity-mono.svg"),
-  // Not in the thesvg registry — keep the Three.js stand-in.
+  node: brand("Node.js", "nodedotjs-mono.svg"),
+  next: brand("Next.js", "nextdotjs-mono.svg"),
+  ts: brand("TypeScript", "typescript-mono.svg"),
+  postgres: brand("PostgreSQL", "postgresql-mono.svg"),
+  pytorch: {
+    title: "PyTorch",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">PyTorch</span>,
+  },
+  tensorflow: {
+    title: "TensorFlow",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">TF</span>,
+  },
+  flask: {
+    title: "Flask",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Flask</span>,
+  },
+  aws: {
+    title: "AWS",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">AWS</span>,
+  },
+  dash: {
+    title: "Dash",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Dash</span>,
+  },
+  plotly: {
+    title: "Plotly",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Plotly</span>,
+  },
+  materialui: {
+    title: "Material-UI",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">MUI</span>,
+  },
+  stripe: {
+    title: "Stripe",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Stripe</span>,
+  },
+  salesforce: {
+    title: "Salesforce",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">SF</span>,
+  },
+  agentforce: {
+    title: "Agentforce",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">AI</span>,
+  },
+  kafka: {
+    title: "Kafka",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Kafka</span>,
+  },
+  docker: brand("Docker", "docker-mono.svg"),
+  tailwind: brand("Tailwind", "tailwind-css-mono.svg"),
   spline: {
     title: "Spline",
     bg: "black",
@@ -133,83 +177,8 @@ const PROJECT_SKILLS = {
   },
   gsap: brand("GSAP", "gsap-mono.svg"),
   motion: brand("Motion", "motion.svg"),
-  supabase: brand("Supabase", "supabase-mono.svg"),
-  trpc: brand("tRPC", "trpc-mono.svg"),
-  drizzle: brand("Drizzle ORM", "drizzle-mono.svg"),
-  hono: brand("Hono", "hono-mono.svg"),
-  redis: brand("Redis / BullMQ", "redis-mono.svg"),
-  cloudflare: brand("Cloudflare", "cloudflare-mono.svg"),
-  // React Native reuses the React mark.
-  reactNative: brand("React Native", "react-mono.svg"),
-  betterAuth: brand("Better Auth", "better-auth-mono.svg"),
-  // Not in the thesvg registry — keep the text marks.
-  zustand: {
-    title: "Zustand",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">Zu</span>,
-  },
-  partykit: {
-    title: "PartyKit",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-base">🎈</span>,
-  },
-  hocuspocus: {
-    title: "Hocuspocus",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">Hp</span>,
-  },
-  // React Flow ships under the xyflow brand.
-  reactFlow: brand("React Flow", "xyflow-mono.svg"),
-  codemirror: brand("CodeMirror", "codemirror-mono.svg"),
-  // "Satori / sharp" — uses the sharp mark.
-  satori: brand("Satori / sharp", "sharp-mono.svg"),
-  turborepo: brand("Turborepo", "turborepo-mono.svg"),
-  // Vercel AI SDK uses the Vercel mark.
-  aiSDK: brand("Vercel AI SDK", "vercel-mono.svg"),
-  anthropic: brand("Anthropic Claude", "anthropic-mono.svg"),
-  mistral: brand("Mistral AI", "mistral-ai-mono.svg"),
-  // Not in the thesvg registry — keep the text mark.
-  nextIntl: {
-    title: "next-intl",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">i18n</span>,
-  },
-  // Not in the thesvg registry — keep the text marks.
-  expo: {
-    title: "Expo",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">Expo</span>,
-  },
-  mcp: {
-    title: "MCP",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">MCP</span>,
-  },
-  salesforce: {
-    title: "Salesforce",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">SF</span>,
-  },
-  grpc: {
-    title: "gRPC",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">gRPC</span>,
-  },
-  kafka: {
-    title: "Kafka",
-    bg: "black",
-    fg: "white",
-    icon: <span className="text-xs font-bold">Kafka</span>,
-  },
 };
+
 export type Project = {
   id: string;
   category: string;
@@ -221,23 +190,22 @@ export type Project = {
   github?: string;
   live: string;
 };
+
 const projects: Project[] = [
   {
-    id: "data-cloud-realtime",
-    category: "Real-time Data Platform",
-    title: "Data Cloud Realtime Services",
+    id: "salesforce-agentforce",
+    category: "AI Infrastructure @ Salesforce",
+    title: "Agentforce Context-Bridging",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: ["landing.png"],
     skills: {
       frontend: [],
       backend: [
         PROJECT_SKILLS.java,
-        PROJECT_SKILLS.grpc,
-        PROJECT_SKILLS.kafka,
-        PROJECT_SKILLS.postgres,
-        PROJECT_SKILLS.redis,
-        PROJECT_SKILLS.docker,
         PROJECT_SKILLS.salesforce,
+        PROJECT_SKILLS.agentforce,
+        PROJECT_SKILLS.kafka,
+        PROJECT_SKILLS.docker,
       ],
     },
     live: "#",
@@ -245,28 +213,219 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            Building real-time data ingestion and processing services at
-            Salesforce Data Cloud scale
+            Built context-bridging infrastructure on Data Cloud Real-Time team
+            enabling Agentforce agents to ingest state from Google ADK agents
           </TypographyP>
           <TypographyP className="font-mono ">
-            Working on CDP Realtime services that power real-time customer data
-            processing for enterprise clients. Contributing to services that
-            handle high-throughput data streams with low-latency requirements.
+            Software Engineering Intern at Salesforce (May – August 2026).
+            Developed production infrastructure that provides full customer
+            context out of the box for Agentforce agents, bridging state across
+            different agent platforms.
           </TypographyP>
+
+          <TypographyH3 className="my-4 mt-8">Real-Time Agent Infrastructure</TypographyH3>
+          <p className="font-mono mb-2">
+            Architected and implemented context-bridging systems that allow
+            Agentforce agents to seamlessly ingest and process state from Google
+            ADK agents, enabling unified customer context across platforms at
+            enterprise scale on the Data Cloud Real-Time team.
+          </p>
 
           <TypographyH3 className="my-4 mt-8">Technology Stack</TypographyH3>
           <p className="font-mono mb-2">
-            Building distributed systems with Java, gRPC, and Kafka to process
-            customer data in real-time. Working with PostgreSQL and Redis for
-            data storage and caching. Deploying containerized services with
-            Docker and Kubernetes.
+            Built with Java for backend services, integrated with Salesforce
+            Data Cloud infrastructure, Apache Kafka for real-time data streaming,
+            and containerized with Docker for scalable deployment across the
+            Agentforce platform.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "roadbuddy",
+    category: "Mobile App",
+    title: "RoadBuddy",
+    src: "/assets/projects-screenshots/portfolio/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.swift,
+        PROJECT_SKILLS.swiftui,
+        PROJECT_SKILLS.materialui,
+      ],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.flask,
+        PROJECT_SKILLS.stripe,
+      ],
+    },
+    live: "https://youtu.be/1-CiGIoMZG8",
+    github: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Intercity carpooling platform connecting Cornell students for shared
+            rides, reducing travel costs by 60%
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Built with Swift/SwiftUI for iOS and Python Flask backend with 40+
+            REST endpoints running at 95% uptime. Identified transportation gaps
+            among Cornell students seeking shared rides to airports and
+            destinations.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">Full-Stack Mobile Platform</TypographyH3>
+          <p className="font-mono mb-2">
+            Developed 8 mobile screens with integrated Stripe payments, real-time
+            GPS tracking, 5-star rating system, and in-app messaging. Backend
+            built with Flask REST API handling ride matching, payment processing,
+            and user management.
           </p>
 
-          <TypographyH3 className="my-4 mt-8">AI-Powered Development</TypographyH3>
+          <TypographyH3 className="my-4 mt-8">Impact</TypographyH3>
           <p className="font-mono mb-2">
-            Leveraging Claude Code and multi-agent orchestration workflows to
-            accelerate development velocity. Using AI for code review,
-            implementation planning, and cross-service coordination.
+            Successfully reduced travel costs by 60% for Cornell students while
+            streamlining campus mobility solutions. Maintained 95% uptime across
+            40+ REST endpoints with scalable architecture.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "silverstore",
+    category: "E-Commerce Platform",
+    title: "SilverStore",
+    src: "/assets/projects-screenshots/portfolio/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.node],
+      backend: [
+        PROJECT_SKILLS.postgres,
+        PROJECT_SKILLS.pytorch,
+        PROJECT_SKILLS.python,
+      ],
+    },
+    live: "https://kpeis695.github.io/SilverStore",
+    github: "https://github.com/kpeis695/SilverStore",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Secure e-commerce platform with AI-powered recommendation system
+            achieving 94% accuracy
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Full-stack e-commerce application with integrated payment processing,
+            automated inventory management, and machine learning recommendations.
+            Successfully handled 30+ orders with streamlined operations.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">AI Recommendation Engine</TypographyH3>
+          <p className="font-mono mb-2">
+            Built collaborative filtering recommendation system using PyTorch
+            that achieved 94% accuracy. Reduced manual oversight by 80% and
+            increased user engagement by 76% through intelligent product
+            suggestions.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">Secure Payment & Inventory</TypographyH3>
+          <p className="font-mono mb-2">
+            Implemented secure payment processing with PostgreSQL for reliable
+            data storage. Automated inventory management system streamlined
+            operations and successfully processed 30+ orders with zero downtime.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "weather-dashboard",
+    category: "Data Analytics",
+    title: "Ithaca Weather Dashboard",
+    src: "/assets/projects-screenshots/portfolio/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.dash, PROJECT_SKILLS.plotly],
+      backend: [PROJECT_SKILLS.python, PROJECT_SKILLS.aws],
+    },
+    live: "https://ithaca-weather-dashboard.onrender.com",
+    github: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Interactive weather analytics platform improving rainfall prediction
+            accuracy by 40%
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Built with Python, Dash, and Plotly featuring multithreaded data
+            processing from 4 locations in Ithaca. Deployed on AWS for scalable
+            performance serving 30,000+ Ithaca residents.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">Statistical Analysis Engine</TypographyH3>
+          <p className="font-mono mb-2">
+            Applied statistical analysis to predict rainfall patterns with 40%
+            improved accuracy. Multithreaded data processing aggregates weather
+            data from 4 locations for comprehensive analytics.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">Cloud Infrastructure</TypographyH3>
+          <p className="font-mono mb-2">
+            Deployed on AWS EC2 for scalable, reliable performance. Interactive
+            visualizations built with Plotly help 30,000+ residents make better
+            daily planning decisions.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "african-translation",
+    category: "AI/ML Research",
+    title: "African Languages Translation",
+    src: "/assets/projects-screenshots/portfolio/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.tensorflow,
+        PROJECT_SKILLS.pytorch,
+      ],
+    },
+    live: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            AI translation models outperforming Google Translate for 300+
+            endangered African dialects
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Software & Data Engineering Intern at African Languages Lab (May –
+            August 2025). Built machine learning models using TensorFlow and
+            Pandas achieving 61 BLEU score vs Google Translate's 55.
+          </TypographyP>
+
+          <TypographyH3 className="my-4 mt-8">Advanced ML Models</TypographyH3>
+          <p className="font-mono mb-2">
+            Developed neural translation models processing 300+ endangered
+            dialects serving 18M speakers worldwide. Created PyArrow audio
+            extraction tools for efficient data preprocessing.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">Automated Data Collection</TypographyH3>
+          <p className="font-mono mb-2">
+            Built automated data collection systems using Python and
+            BeautifulSoup, reducing manual work by 80%. Accelerated training of
+            translation models serving underrepresented communities globally.
           </p>
         </div>
       );
@@ -274,12 +433,12 @@ const projects: Project[] = [
   },
   {
     id: "portfolio",
-    category: "Portfolio",
-    title: "Personal Portfolio",
+    category: "Portfolio Website",
+    title: "3D Interactive Portfolio",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: ["landing.png"],
-    live: "https://skpei.vercel.app",
-    github: "https://github.com/skpei/personal-website",
+    live: "https://kpeis695.github.io",
+    github: "https://github.com/kpeis695/personal-website",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
@@ -294,27 +453,29 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono ">
-            An interactive 3D portfolio showcasing my work and skills with
-            beautiful animations.
+            Interactive 3D portfolio featuring a keyboard where each keycap
+            reveals a different skill. Built with Next.js 16, TypeScript, GSAP
+            animations, and Spline 3D graphics.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
-          <TypographyH3 className="my-4 mt-8">
-            Interactive 3D Keyboard
-          </TypographyH3>
+
+          <TypographyH3 className="my-4 mt-8">3D Interactive Experience</TypographyH3>
           <p className="font-mono mb-2">
-            A 3D keyboard rendered with Spline where each keycap reveals a
-            different skill. Built with Next.js, TypeScript, and GSAP
-            animations.
+            A 3D keyboard rendered with Spline where each key press reveals
+            technical skills. Smooth animations powered by GSAP and Motion
+            library create an engaging user experience.
           </p>
 
           <TypographyH3 className="my-4 mt-8">Modern Tech Stack</TypographyH3>
           <p className="font-mono mb-2">
-            Using Next.js 16 with the App Router, Motion library for smooth
-            animations, and a dark space theme with floating particles.
+            Built with Next.js 16 App Router, TypeScript for type safety,
+            Tailwind CSS for styling, and deployed on Vercel for optimal
+            performance. Dark space theme with floating particle effects.
           </p>
         </div>
       );
     },
   },
 ];
+
 export default projects;
