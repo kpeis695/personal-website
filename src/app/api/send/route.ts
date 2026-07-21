@@ -2,6 +2,7 @@ import { EmailTemplate } from "@/components/email-template";
 import { config } from "@/data/config";
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import React from "react";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -21,7 +22,7 @@ export async function POST(req: NextRequest) {
       to: [config.email], // Sends to the email in config.ts
       replyTo: email, // User's email so you can reply directly
       subject: `New message from ${fullName}`,
-      react: EmailTemplate({ fullName, email, message }),
+      react: React.createElement(EmailTemplate, { fullName, email, message }),
     });
 
     if (error) {
