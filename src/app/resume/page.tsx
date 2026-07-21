@@ -1,9 +1,9 @@
 import ResumeView from "./resume-view";
 
 export const metadata = {
-  title: "Résumé | Naresh Khatri",
+  title: "Résumé | Sylvester Kpei",
   description:
-    "Résumé of Naresh Khatri — Senior Full-Stack Engineer. View online or download the PDF.",
+    "Résumé of Sylvester Kpei — Full Stack Software Engineer. View online or download the PDF.",
 };
 
 export default function ResumePage() {
