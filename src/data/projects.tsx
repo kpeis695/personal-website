@@ -193,56 +193,6 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    id: "salesforce-agentforce",
-    category: "AI Infrastructure @ Salesforce",
-    title: "Agentforce Context-Bridging",
-    src: "",
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [],
-      backend: [
-        PROJECT_SKILLS.java,
-        PROJECT_SKILLS.salesforce,
-        PROJECT_SKILLS.agentforce,
-        PROJECT_SKILLS.kafka,
-        PROJECT_SKILLS.docker,
-      ],
-    },
-    live: "#",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            Built context-bridging infrastructure on Data Cloud Real-Time team
-            enabling Agentforce agents to ingest state from Google ADK agents
-          </TypographyP>
-          <TypographyP className="font-mono ">
-            Software Engineering Intern at Salesforce (May – August 2026).
-            Developed production infrastructure that provides full customer
-            context out of the box for Agentforce agents, bridging state across
-            different agent platforms.
-          </TypographyP>
-
-          <TypographyH3 className="my-4 mt-8">Real-Time Agent Infrastructure</TypographyH3>
-          <p className="font-mono mb-2">
-            Architected and implemented context-bridging systems that allow
-            Agentforce agents to seamlessly ingest and process state from Google
-            ADK agents, enabling unified customer context across platforms at
-            enterprise scale on the Data Cloud Real-Time team.
-          </p>
-
-          <TypographyH3 className="my-4 mt-8">Technology Stack</TypographyH3>
-          <p className="font-mono mb-2">
-            Built with Java for backend services, integrated with Salesforce
-            Data Cloud infrastructure, Apache Kafka for real-time data streaming,
-            and containerized with Docker for scalable deployment across the
-            Agentforce platform.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
     id: "roadbuddy",
     category: "Mobile App",
     title: "RoadBuddy",
@@ -381,51 +331,6 @@ const projects: Project[] = [
             Deployed on AWS EC2 for scalable, reliable performance. Interactive
             visualizations built with Plotly help 30,000+ residents make better
             daily planning decisions.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
-    id: "african-translation",
-    category: "AI/ML Research",
-    title: "African Languages Translation",
-    src: "",
-    screenshots: ["landing.png"],
-    skills: {
-      frontend: [],
-      backend: [
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.tensorflow,
-        PROJECT_SKILLS.pytorch,
-      ],
-    },
-    live: "#",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            AI translation models outperforming Google Translate for 300+
-            endangered African dialects
-          </TypographyP>
-          <TypographyP className="font-mono ">
-            Software & Data Engineering Intern at African Languages Lab (May –
-            August 2025). Built machine learning models using TensorFlow and
-            Pandas achieving 61 BLEU score vs Google Translate's 55.
-          </TypographyP>
-
-          <TypographyH3 className="my-4 mt-8">Advanced ML Models</TypographyH3>
-          <p className="font-mono mb-2">
-            Developed neural translation models processing 300+ endangered
-            dialects serving 18M speakers worldwide. Created PyArrow audio
-            extraction tools for efficient data preprocessing.
-          </p>
-
-          <TypographyH3 className="my-4 mt-8">Automated Data Collection</TypographyH3>
-          <p className="font-mono mb-2">
-            Built automated data collection systems using Python and
-            BeautifulSoup, reducing manual work by 80%. Accelerated training of
-            translation models serving underrepresented communities globally.
           </p>
         </div>
       );
