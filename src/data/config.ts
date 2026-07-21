@@ -36,7 +36,7 @@ const config = {
   social: {
     twitter: "",
     linkedin: "https://linkedin.com/in/ks200",
-    instagram: "",
+    instagram: "https://www.instagram.com/big_elorm",
     facebook: "",
     github: "https://github.com/kpeis695",
   },
