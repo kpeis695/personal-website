@@ -23,7 +23,7 @@ const config = {
     "full-stack developer",
   ],
   author: "Sylvester",
-  email: "sek266@cornell.edu",
+  email: "kpeis695@gmail.com",
   site: "https://kpeis695.github.io",
 
   // for github stars button
