@@ -1,7 +1,7 @@
 const config = {
   title: "Sylvester | Software Engineer",
   description: {
-    long: "Portfolio of Sylvester, Cornell CS student and Software Engineering Intern at Salesforce. Experience in AI agents, real-time systems, and full-stack development. Built context-bridging infrastructure for Agentforce on Data Cloud Real-Time team.",
+    long: "Portfolio of Sylvester, Cornell CS student and Software Engineering Intern at Salesforce. Experience in AI agents, real-time systems, and software development. Built context-bridging infrastructure for Agentforce on Data Cloud Real-Time team.",
     short:
       "Cornell CS student | Salesforce SWE Intern | Building AI agents and real-time data systems",
   },
@@ -20,7 +20,7 @@ const config = {
     "React",
     "Swift",
     "machine learning",
-    "full-stack developer",
+    "software developer",
   ],
   author: "Sylvester",
   email: "kpeis695@gmail.com",

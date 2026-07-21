@@ -326,7 +326,9 @@ export const EXPERIENCE: Experience[] = [
     title: "Software Engineering Intern",
     company: "Salesforce",
     description: [
-      "Built context-bridging infrastructure on the Data Cloud Real-Time team enabling Agentforce agents to ingest state from Google ADK agents, providing full customer context out of the box",
+      "Engineered a distributed, framework agnostic agentic-memory SDK adopted across 3 intern-built agents (Google ADK, LangGraph, Claude), cutting agent integration boilerplate by 90% (30+ lines to 3 lines) and shipping 400+ passing tests",
+      "Diagnosed and fixed a critical reliability bug silently dropping 100% of agent memory records before ingestion, then shipped a scalable onboarding flow with 6-tier credential resolution adopted by 2 sibling adapter teams",
+      "Benchmarked Salesforce's Data Cloud memory service against Zep and Mem0 across 18-turn, multi-session recall tests, then designed a procedural memory system for scalable agent orchestration, presented live to VP and EVP stakeholders",
     ],
     skills: [
       SkillNames.JAVA,
