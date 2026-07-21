@@ -7,8 +7,10 @@ import { Download, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResumeDoodle from "./resume-doodle";
 
-// Drop the compiled PDF here: frontend/public/Naresh_Khatri_Resume.pdf
-const RESUME_PATH = "/Naresh_Khatri_Resume.pdf";
+// Google Drive resume link
+const RESUME_FILE_ID = "18JVPvuoxT_u4oW9muoh7sIuD0h2Olzij";
+const RESUME_PATH = `https://drive.google.com/file/d/${RESUME_FILE_ID}/preview`;
+const RESUME_DOWNLOAD = `https://drive.google.com/uc?export=download&id=${RESUME_FILE_ID}`;
 
 export default function ResumeView() {
   return (
@@ -38,8 +40,9 @@ export default function ResumeView() {
           </Link>
           <Button>
             <a
-              href={RESUME_PATH}
-              download
+              href={RESUME_DOWNLOAD}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex gap-2 text-sm transition-colors hover:text-foreground"
             >
               <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
@@ -59,8 +62,8 @@ export default function ResumeView() {
           className="aspect-[210/297] w-full overflow-hidden rounded-2xl bg-white shadow-xl"
         >
           <ResumeDoodle
-            src={`${RESUME_PATH}#toolbar=0&navpanes=0&view=FitH`}
-            title="Naresh Khatri — Résumé"
+            src={RESUME_PATH}
+            title="Sylvester Kpei — Résumé"
           />
         </motion.div>
       </div>

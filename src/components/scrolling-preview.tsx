@@ -113,53 +113,7 @@ const ScrollingPreview = ({
         }}
       />
 
-      {/* floating screenshot panel */}
-      <div
-        ref={viewportRef}
-        className="sp-shot"
-        style={{
-          position: "absolute",
-          left: 22,
-          right: 22,
-          top: 20,
-          bottom: 0,
-          overflow: "hidden",
-          borderRadius: 10,
-          boxShadow:
-            "0 24px 50px -12px rgba(8,20,55,0.55), 0 8px 18px -8px rgba(8,20,55,0.45)",
-          border: "1px solid rgba(255,255,255,0.18)",
-        }}
-      >
-        <motion.div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `url("${src}")`,
-            // Tall pages fill width and pan; normal images cover the frame.
-            backgroundSize: scrolls ? "100% auto" : "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: scrolls ? "50% 0%" : "center",
-          }}
-          animate={
-            animate
-              ? {
-                backgroundPosition: [
-                  "50% 0%",
-                  "50% 100%",
-                  "50% 100%",
-                  "50% 0%",
-                  "50% 0%",
-                ],
-              }
-              : undefined
-          }
-          transition={
-            animate
-              ? { duration: total, ease: "easeInOut", repeat: Infinity, times }
-              : undefined
-          }
-        />
-      </div>
+      {/* floating screenshot panel - hide screenshot, show only background */}
     </div>
   );
 };

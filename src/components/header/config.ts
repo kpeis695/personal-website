@@ -40,6 +40,11 @@ const links: Link[] = [
     title: 'Contact',
     href: '/#contact',
     thumbnail: '/assets/nav-link-previews/contact.png'
+  },
+  {
+    title: 'Resume',
+    href: '/resume',
+    thumbnail: '/assets/nav-link-previews/landing.png'
   }
 ];
 

@@ -1,5 +1,9 @@
 const footer: { title: string; href: string }[] = [
   {
+    title: "Resume",
+    href: "/resume",
+  },
+  {
     title: "Blog",
     href: "/blogs",
   },

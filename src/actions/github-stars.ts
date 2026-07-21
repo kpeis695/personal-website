@@ -9,17 +9,24 @@ export async function getGithubStars(): Promise<number> {
   "use cache";
   cacheLife({ stale: 300, revalidate: 300 });
 
-  const res = await fetch(
-    `https://api.github.com/repos/${config.githubUsername}/${config.githubRepo}`,
-    { headers: { Accept: "application/vnd.github+json" } },
-  );
-  if (!res.ok) {
-    throw new Error(`GitHub API responded with ${res.status}`);
-  }
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${config.githubUsername}/${config.githubRepo}`,
+      { headers: { Accept: "application/vnd.github+json" } },
+    );
+    if (!res.ok) {
+      console.warn(`GitHub API responded with ${res.status} - rate limit likely exceeded`);
+      return 0; // Return 0 stars when rate limited
+    }
 
-  const data = await res.json();
-  if (typeof data.stargazers_count !== "number") {
-    throw new Error("Unexpected GitHub API response shape");
+    const data = await res.json();
+    if (typeof data.stargazers_count !== "number") {
+      console.warn("Unexpected GitHub API response shape");
+      return 0;
+    }
+    return data.stargazers_count;
+  } catch (error) {
+    console.warn("Failed to fetch GitHub stars:", error);
+    return 0; // Fail gracefully
   }
-  return data.stargazers_count;
 }

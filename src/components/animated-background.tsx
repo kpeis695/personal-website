@@ -34,6 +34,11 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
 
   const [keyboardRevealed, setKeyboardRevealed] = useState(false);
 
+  // Reset keyboard revealed state on mount to ensure re-initialization after navigation
+  useEffect(() => {
+    setKeyboardRevealed(false);
+  }, []);
+
   // --- Event Handlers ---
 
   const handleMouseHover = (e: SplineEvent) => {
@@ -289,6 +294,7 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
   // Initialize GSAP and Spline interactions
   useEffect(() => {
     if (!splineApp) return;
+
     handleSplineInteractions();
     const timelines = setupScrollAnimations();
     bongoAnimationRef.current = getBongoAnimation();
@@ -453,9 +459,13 @@ const KeyboardScene = ({ maxDpr }: { maxDpr: number }) => {
     const url = window.location.pathname + window.location.search + hash;
     window.history.replaceState(window.history.state, "", url);
 
-    if (!splineApp || isLoading || keyboardRevealed) return;
-    updateKeyboardTransform();
-  }, [splineApp, isLoading, activeSection]);
+    if (!splineApp || isLoading) return;
+
+    // Always trigger keyboard reveal when splineApp loads (handles navigation back to page)
+    if (!keyboardRevealed) {
+      updateKeyboardTransform();
+    }
+  }, [splineApp, isLoading, keyboardRevealed]);
 
   // Cap the renderer's pixel ratio once the scene is ready, and clean up the
   // resize listener on unmount / DPR change (previously added in onLoad and

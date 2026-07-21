@@ -196,7 +196,7 @@ const projects: Project[] = [
     id: "salesforce-agentforce",
     category: "AI Infrastructure @ Salesforce",
     title: "Agentforce Context-Bridging",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: "",
     screenshots: ["landing.png"],
     skills: {
       frontend: [],
@@ -246,7 +246,7 @@ const projects: Project[] = [
     id: "roadbuddy",
     category: "Mobile App",
     title: "RoadBuddy",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: "",
     screenshots: ["landing.png"],
     skills: {
       frontend: [
@@ -299,7 +299,7 @@ const projects: Project[] = [
     id: "silverstore",
     category: "E-Commerce Platform",
     title: "SilverStore",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: "",
     screenshots: ["landing.png"],
     skills: {
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.node],
@@ -347,7 +347,7 @@ const projects: Project[] = [
     id: "weather-dashboard",
     category: "Data Analytics",
     title: "Ithaca Weather Dashboard",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: "",
     screenshots: ["landing.png"],
     skills: {
       frontend: [PROJECT_SKILLS.dash, PROJECT_SKILLS.plotly],
@@ -390,7 +390,7 @@ const projects: Project[] = [
     id: "african-translation",
     category: "AI/ML Research",
     title: "African Languages Translation",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
+    src: "",
     screenshots: ["landing.png"],
     skills: {
       frontend: [],
