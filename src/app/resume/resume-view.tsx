@@ -6,9 +6,10 @@ import { motion } from "motion/react";
 import { Download, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ResumeDoodle from "./resume-doodle";
+import { config } from "@/data/config";
 
-// Google Drive resume link
-const RESUME_FILE_ID = "18JVPvuoxT_u4oW9muoh7sIuD0h2Olzij";
+// Google Drive resume link - Update the resumeFileId in src/data/config.ts
+const RESUME_FILE_ID = config.resumeFileId;
 const RESUME_PATH = `https://drive.google.com/file/d/${RESUME_FILE_ID}/preview`;
 const RESUME_DOWNLOAD = `https://drive.google.com/uc?export=download&id=${RESUME_FILE_ID}`;
 

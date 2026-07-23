@@ -26,6 +26,9 @@ const config = {
   email: "kpeis695@gmail.com",
   site: "https://kpeis695.github.io",
 
+  // Resume - Google Drive file ID (update this when you upload a new resume)
+  resumeFileId: "18JVPvuoxT_u4oW9muoh7sIuD0h2Olzij",
+
   // for github stars button
   githubUsername: "kpeis695",
   githubRepo: "personal-website",
