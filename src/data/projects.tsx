@@ -359,7 +359,7 @@ const projects: Project[] = [
     id: "slydeback",
     category: "Browser Extension",
     title: "SlydeBack",
-    src: "/assets/projects-screenshots/slydeback/landing.png",
+    src: `${BASE_PATH}/slydeback/landing.png`,
     screenshots: ["landing.png"],
     skills: {
       frontend: [PROJECT_SKILLS.javascript, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
@@ -395,7 +395,7 @@ const projects: Project[] = [
     id: "reaction-game",
     category: "Web Game",
     title: "Reaction Time Test Game",
-    src: "/assets/projects-screenshots/reaction-game/landing.png",
+    src: `${BASE_PATH}/reaction-game/landing.png`,
     screenshots: ["landing.png"],
     skills: {
       frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.javascript],
@@ -431,7 +431,7 @@ const projects: Project[] = [
     id: "planetoids",
     category: "Desktop Game",
     title: "Planetoids Game",
-    src: "/assets/projects-screenshots/planetoids/landing.png",
+    src: `${BASE_PATH}/planetoids/landing.png`,
     screenshots: ["landing.png"],
     skills: {
       frontend: [PROJECT_SKILLS.java, PROJECT_SKILLS.javafx],
