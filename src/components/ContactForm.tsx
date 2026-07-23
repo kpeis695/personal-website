@@ -116,7 +116,7 @@ const ContactForm = () => {
         />
         {errors.message && <p className="text-sm text-red-500">{errors.message}</p>}
         <p className="text-sm text-muted-foreground">
-          You can also reach me directly at <a href="mailto:sek266@cornell.edu" className="underline hover:text-foreground">sek266@cornell.edu</a>
+          I&apos;ll never share your data with anyone else. Pinky promise!
         </p>
       </div>
       <Button

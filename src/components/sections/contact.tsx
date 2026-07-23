@@ -29,10 +29,10 @@ const ContactSection = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href={`mailto:${config.email}`}
+                href={`mailto:${config.displayEmail}`}
                 className="text-gray-200 cursor-can-hover rounded-lg"
               >
-                {config.email}
+                {config.displayEmail}
               </a>{" "}
               or drop your info here.
             </CardDescription>
