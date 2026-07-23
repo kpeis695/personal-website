@@ -27,7 +27,7 @@ const config = {
   site: "https://kpeis695.github.io",
 
   // Resume - Google Drive file ID (update this when you upload a new resume)
-  resumeFileId: "18JVPvuoxT_u4oW9muoh7sIuD0h2Olzij",
+  resumeFileId: "1zEzuhjzYeeipUgpcPAkiD97V0SCOhT4b",
 
   // for github stars button
   githubUsername: "kpeis695",
