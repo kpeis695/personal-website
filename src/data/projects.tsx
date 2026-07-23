@@ -359,7 +359,7 @@ const projects: Project[] = [
     id: "slydeback",
     category: "Browser Extension",
     title: "SlydeBack",
-    src: `${BASE_PATH}/slydeback/landing.png`,
+    src: "",
     screenshots: ["landing.png"],
     skills: {
       frontend: [PROJECT_SKILLS.javascript, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
