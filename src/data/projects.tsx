@@ -177,6 +177,25 @@ const PROJECT_SKILLS = {
   },
   gsap: brand("GSAP", "gsap-mono.svg"),
   motion: brand("Motion", "motion.svg"),
+  javascript: brand("JavaScript", "javascript-mono.svg"),
+  html: {
+    title: "HTML",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">HTML</span>,
+  },
+  css: {
+    title: "CSS",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">CSS</span>,
+  },
+  javafx: {
+    title: "JavaFX",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">JavaFX</span>,
+  },
 };
 
 export type Project = {
@@ -337,12 +356,120 @@ const projects: Project[] = [
     },
   },
   {
+    id: "slydeback",
+    category: "Browser Extension",
+    title: "SlydeBack",
+    src: "",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.javascript, PROJECT_SKILLS.html, PROJECT_SKILLS.css],
+      backend: [PROJECT_SKILLS.python],
+    },
+    live: "#",
+    github: "https://github.com/kpeis695/SlydeBack",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Email delay extension with 24-hour window and intelligent queue management
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Ever wished you could take back that email you sent too quickly? SlydeBack gives you up to 24 hours to edit or cancel emails with a 95% mistake prevention rate for 100+ users.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">Smart Email Control</TypographyH3>
+          <p className="font-mono mb-2">
+            24-hour delay window with live dashboard showing real-time countdown timers. Full edit/cancel control with smart persistence that survives browser crashes and computer restarts.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">Advanced Engineering</TypographyH3>
+          <p className="font-mono mb-2">
+            Pushed JavaScript and browser APIs to their limits with advanced asynchronous systems handling complex state management while maintaining flawless user experience across sessions.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "reaction-game",
+    category: "Web Game",
+    title: "Reaction Time Test Game",
+    src: "",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.react, PROJECT_SKILLS.javascript],
+      backend: [],
+    },
+    live: "https://kpeis695.github.io/REACTION-TIME-TEST-GAME/",
+    github: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Web-based reaction time game measuring reflexes down to the millisecond
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Built with React.js and JavaScript to test human reflexes against the world's fastest recorded reaction time of 100-120 milliseconds. Smooth, responsive, and brutally honest about your speed.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">Performance Optimized</TypographyH3>
+          <p className="font-mono mb-2">
+            50+ design and performance iterations to ensure millisecond-accurate measurements and smooth gameplay. Focused on responsive design and precise timing.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">Challenge Yourself</TypographyH3>
+          <p className="font-mono mb-2">
+            Test your reflexes and compete against the world's best reaction times. Every millisecond counts in this fast-paced skill challenge.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "planetoids",
+    category: "Desktop Game",
+    title: "Planetoids Game",
+    src: "",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [PROJECT_SKILLS.java, PROJECT_SKILLS.javafx],
+      backend: [],
+    },
+    live: "https://kpeis695.github.io/kpeis695-planetoids-web-game/",
+    github: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Space-themed game with real-time collision detection and AI-driven enemies
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            Built with Java and JavaFX featuring real-time collision detection, basic physics, and AI-driven enemy movement. Optimized rendering for 15% better frame rate consistency.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          <TypographyH3 className="my-4 mt-8">Advanced Physics</TypographyH3>
+          <p className="font-mono mb-2">
+            Real-time collision detection with basic physics engine. AI-driven enemy movement patterns create challenging and immersive gameplay.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">Performance Engineering</TypographyH3>
+          <p className="font-mono mb-2">
+            Extensive testing and optimization to boost frame rate consistency by 15%, making gameplay smoother and more responsive. A great exercise in structured problem-solving.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
     id: "portfolio",
     category: "Portfolio Website",
     title: "3D Interactive Portfolio",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: ["landing.png"],
-    live: "https://kpeis695.github.io",
+    live: "https://dev-sylvester.vercel.app",
     github: "https://github.com/kpeis695/personal-website",
     skills: {
       frontend: [
