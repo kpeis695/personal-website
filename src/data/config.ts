@@ -24,7 +24,7 @@ const config = {
   ],
   author: "Sylvester",
   email: "kpeis695@gmail.com", // Internal email for Resend API (must match Resend account)
-  displayEmail: "sek266@cornell.edu", // Public email shown on website
+  displayEmail: "kpeis695@gmail.com", // Public email shown on website
   site: "https://kpeis695.github.io",
 
   // Resume - Google Drive file ID (update this when you upload a new resume)
